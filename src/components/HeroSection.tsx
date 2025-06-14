@@ -1,7 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const stats = [
@@ -75,9 +75,11 @@ const HeroSection = () => {
           Join hands with us to solve <span className="text-yellow-600 font-semibold">Real-world challenges</span>
         </p>
         
-        <Button size="lg" className="mb-12 bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-lg">
-          EXPLORE OUR PROGRAMS
-        </Button>
+        <Link to="/explore">
+          <Button size="lg" className="mb-12 bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-lg">
+            EXPLORE OUR PROGRAMS
+          </Button>
+        </Link>
 
         {/* Stats Cards */}
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
