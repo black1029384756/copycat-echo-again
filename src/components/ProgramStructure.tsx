@@ -1,40 +1,63 @@
 
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Award, Users, TestTube, Calendar, Monitor } from "lucide-react";
+import { BookOpen, Award, Users, TestTube, Calendar, Monitor, ChevronDown, ChevronUp } from "lucide-react";
 
 const ProgramStructure = () => {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
   const programStructure = [
     {
       title: "General",
       subtitle: "Seminar / Webinar / Mentorship",
       duration: "Frequently",
       features: ["Both Online + Offline"],
-      icon: <BookOpen className="h-5 w-5 text-blue-600" />
+      icon: <BookOpen className="h-5 w-5 text-blue-600" />,
+      expandedContent: {
+        description: "Join our regular seminars and webinars to stay updated with the latest industry trends and connect with experts.",
+        highlights: ["Expert speakers", "Interactive sessions", "Networking opportunities", "Certificate of participation"]
+      }
     },
     {
       title: "Basic", 
       subtitle: "Certificate Program",
       duration: "1 to 3 days",
       features: ["Online 100% training"],
-      icon: <Award className="h-5 w-5 text-blue-600" />
+      icon: <Award className="h-5 w-5 text-blue-600" />,
+      expandedContent: {
+        description: "Get certified with our comprehensive basic programs designed for beginners and professionals looking to upskill.",
+        highlights: ["Industry-recognized certificate", "Self-paced learning", "24/7 support", "Lifetime access"]
+      }
     },
     {
       title: "Standard",
       subtitle: "Corporate Training Program",
       duration: "3 to 10 days",
       features: ["Online + Offline 100% LIVE training"],
-      icon: <Users className="h-5 w-5 text-blue-600" />
+      icon: <Users className="h-5 w-5 text-blue-600" />,
+      expandedContent: {
+        description: "Intensive corporate training programs designed to enhance team skills and organizational capabilities.",
+        highlights: ["Customized curriculum", "Team assessments", "Progress tracking", "Corporate certification"]
+      }
     },
     {
       title: "Advanced",
       subtitle: "Instrumentation Hands-on",
       duration: "3 to 10 days",
       features: ["Offline 100% LIVE training"],
-      icon: <TestTube className="h-5 w-5 text-blue-600" />
+      icon: <TestTube className="h-5 w-5 text-blue-600" />,
+      expandedContent: {
+        description: "Advanced hands-on training with real instruments and equipment for practical learning experience.",
+        highlights: ["Real equipment training", "Lab access", "Expert mentorship", "Project-based learning"]
+      }
     }
   ];
+
+  const toggleExpanded = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index);
+  };
 
   const ArrowWithTail = () => (
     <div className="absolute top-3 right-3 flex items-center">
@@ -51,7 +74,7 @@ const ProgramStructure = () => {
         <h2 className="text-2xl font-bold text-center mb-6">Program Structure</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {programStructure.map((program, index) => (
-            <Card key={index} className="p-4 bg-white border border-gray-200 rounded-lg relative">
+            <Card key={index} className="p-4 bg-white border border-gray-200 rounded-lg relative transition-all duration-200 hover:shadow-md">
               <ArrowWithTail />
               <CardContent className="p-0">
                 <div className="flex items-center mb-3">
@@ -82,14 +105,45 @@ const ProgramStructure = () => {
                   <Monitor className="h-3 w-3" />
                   <span>{program.features[0]}</span>
                 </div>
+
+                {/* Expanded Content */}
+                {expandedCard === index && (
+                  <div className="mb-3 p-3 bg-blue-50 rounded-lg animate-fade-in">
+                    <p className="text-xs text-gray-700 mb-2">{program.expandedContent.description}</p>
+                    <div className="space-y-1">
+                      {program.expandedContent.highlights.map((highlight, idx) => (
+                        <div key={idx} className="flex items-center text-xs text-gray-600">
+                          <div className="w-1 h-1 bg-blue-500 rounded-full mr-2"></div>
+                          {highlight}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full text-xs py-2 h-8"
-                >
-                  More info
-                </Button>
+                <div className="flex gap-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1 text-xs py-2 h-8"
+                    onClick={() => toggleExpanded(index)}
+                  >
+                    <span className="mr-1">More info</span>
+                    {expandedCard === index ? (
+                      <ChevronUp className="h-3 w-3" />
+                    ) : (
+                      <ChevronDown className="h-3 w-3" />
+                    )}
+                  </Button>
+                  {expandedCard === index && (
+                    <Button 
+                      size="sm" 
+                      className="text-xs py-2 h-8 bg-blue-500 hover:bg-blue-600"
+                    >
+                      START LEARNING
+                    </Button>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}

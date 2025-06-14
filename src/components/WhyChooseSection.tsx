@@ -1,11 +1,36 @@
 
+import { useState } from "react";
+import { ChevronDown, ChevronUp, Users, Award, Building, HeadphonesIcon } from "lucide-react";
+
 const WhyChooseSection = () => {
+  const [expandedItem, setExpandedItem] = useState<number | null>(null);
+
   const whyChooseItems = [
-    "World Class instructors",
-    "1 on 1 Mentorship",
-    "Industrial Training", 
-    "Placement Assistant"
+    {
+      title: "World Class Instructors",
+      content: "Learn from top industry professionals with real-world experience",
+      icon: <Users className="h-5 w-5 text-blue-600" />
+    },
+    {
+      title: "1 on 1 Mentorship", 
+      content: "Get personalized guidance and support throughout your learning journey",
+      icon: <HeadphonesIcon className="h-5 w-5 text-blue-600" />
+    },
+    {
+      title: "Industrial Training",
+      content: "Hands-on experience with real industry projects and scenarios", 
+      icon: <Building className="h-5 w-5 text-blue-600" />
+    },
+    {
+      title: "Placement Assistant",
+      content: "Comprehensive support for career placement and job opportunities",
+      icon: <Award className="h-5 w-5 text-blue-600" />
+    }
   ];
+
+  const toggleExpanded = (index: number) => {
+    setExpandedItem(expandedItem === index ? null : index);
+  };
 
   return (
     <section className="py-6 md:py-8 bg-white w-full overflow-hidden">
@@ -32,8 +57,31 @@ const WhyChooseSection = () => {
           {/* Right side - Features */}
           <div className="relative z-10 space-y-2 md:space-y-3 px-4 md:px-6 py-4 md:py-0">
             {whyChooseItems.map((item, index) => (
-              <div key={index} className="bg-gray-100 rounded-xl p-3 md:p-4 text-sm md:text-base font-medium shadow-sm hover:shadow-md transition-shadow">
-                {item}
+              <div key={index} className="bg-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
+                <div 
+                  className="p-3 md:p-4 cursor-pointer flex items-center justify-between"
+                  onClick={() => toggleExpanded(index)}
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+                      {item.icon}
+                    </div>
+                    <span className="text-sm md:text-base font-medium">{item.title}</span>
+                  </div>
+                  {expandedItem === index ? (
+                    <ChevronUp className="h-4 w-4 text-gray-600" />
+                  ) : (
+                    <ChevronDown className="h-4 w-4 text-gray-600" />
+                  )}
+                </div>
+                
+                {expandedItem === index && (
+                  <div className="px-4 pb-4 animate-fade-in">
+                    <div className="bg-blue-50 rounded-lg p-3 ml-11">
+                      <p className="text-sm text-gray-700">{item.content}</p>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
