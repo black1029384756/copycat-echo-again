@@ -1,5 +1,4 @@
 
-
 const WhyChooseSection = () => {
   const whyChooseItems = [
     "World Class instructors",
@@ -76,30 +75,32 @@ const WhyChooseSection = () => {
   `;
 
   return (
-    <section className="py-8 md:py-12 bg-white w-full overflow-hidden">
+    <section className="py-6 md:py-8 bg-white w-full overflow-hidden">
       <div className="w-full max-w-none px-0">
-        <div className="grid md:grid-cols-2 items-center relative min-h-[400px] md:min-h-[500px]">
-          {/* SVG background with 20% opacity */}
+        <div className="grid md:grid-cols-2 items-center relative min-h-[300px] md:min-h-[350px]">
+          {/* Single SVG logo on the left side with 20% opacity */}
           <div 
-            className="absolute inset-0 w-full h-full opacity-20 bg-repeat bg-center"
+            className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 opacity-20"
             style={{ 
               backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(svgBackground)}")`,
-              backgroundSize: '100px 100px'
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center'
             }}
           ></div>
           
           {/* Left side - Title */}
-          <div className="relative z-10 flex flex-col justify-center h-full px-4 md:px-8 py-6 md:py-0">
-            <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight text-center md:text-left">
+          <div className="relative z-10 flex flex-col justify-center h-full px-4 md:px-8 py-4 md:py-0">
+            <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight text-center md:text-left">
               Why Choose<br/>
               <span className="text-blue-600">Stem for Society</span> ?
             </h2>
           </div>
 
           {/* Right side - Features */}
-          <div className="relative z-10 space-y-3 md:space-y-4 px-4 md:px-6 py-4 md:py-0">
+          <div className="relative z-10 space-y-2 md:space-y-3 px-4 md:px-6 py-4 md:py-0">
             {whyChooseItems.map((item, index) => (
-              <div key={index} className="bg-gray-100 rounded-xl p-4 md:p-5 text-sm md:text-base font-medium shadow-sm hover:shadow-md transition-shadow">
+              <div key={index} className="bg-gray-100 rounded-xl p-3 md:p-4 text-sm md:text-base font-medium shadow-sm hover:shadow-md transition-shadow">
                 {item}
               </div>
             ))}
@@ -111,4 +112,3 @@ const WhyChooseSection = () => {
 };
 
 export default WhyChooseSection;
-
