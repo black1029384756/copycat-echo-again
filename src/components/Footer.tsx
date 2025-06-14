@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 
@@ -115,4 +116,19 @@ const Footer = () => {
             <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
               <Linkedin className="h-5 w-5 text-blue-600" />
             </a>
-            <a href="#" className="w-1
+            <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+              <Youtube className="h-5 w-5 text-blue-600" />
+            </a>
+          </div>
+
+          {/* Copyright */}
+          <div className="text-center text-sm text-blue-100">
+            © 2025 STEM for society. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
