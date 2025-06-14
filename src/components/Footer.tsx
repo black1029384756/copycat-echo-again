@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Left Section - Logo and Address */}
           <div className="lg:w-1/4 space-y-4">
             {/* Logo and Brand */}
-            <div className="border-2 border-dashed border-white/50 p-4 rounded-lg">
+            <div className="p-4 rounded-lg">
               <div className="flex items-center space-x-3 mb-2">
                 <div className="h-10 w-10 rounded-lg bg-white/10 flex items-center justify-center">
                   <svg width="84" height="85" viewBox="0 0 84 85" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,24 +103,24 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-blue-400 pt-6 mt-8">
-          {/* Social Media Icons */}
-          <div className="flex justify-center space-x-4 mb-4">
-            <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
-              <Twitter className="h-5 w-5 text-blue-600" />
-            </a>
-            <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
-              <Instagram className="h-5 w-5 text-blue-600" />
-            </a>
-            <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
-              <Linkedin className="h-5 w-5 text-blue-600" />
-            </a>
-            <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
-              <Youtube className="h-5 w-5 text-blue-600" />
-            </a>
-          </div>
+        {/* Social Media Icons - Above the line */}
+        <div className="flex justify-center space-x-4 mt-8 mb-6">
+          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+            <Twitter className="h-5 w-5 text-blue-600" />
+          </a>
+          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+            <Instagram className="h-5 w-5 text-blue-600" />
+          </a>
+          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+            <Linkedin className="h-5 w-5 text-blue-600" />
+          </a>
+          <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+            <Youtube className="h-5 w-5 text-blue-600" />
+          </a>
+        </div>
 
+        {/* Bottom Section */}
+        <div className="border-t border-blue-400 pt-6">
           {/* Copyright */}
           <div className="text-center text-sm text-blue-100">
             © 2025 STEM for society. All rights reserved.

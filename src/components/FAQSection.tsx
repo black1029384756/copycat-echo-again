@@ -16,8 +16,8 @@ const FAQSection = () => {
 
   return (
     <section className="py-8">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="max-w-2xl mx-auto">
+      <div className="container mx-auto px-4 max-w-full">
+        <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
             <Button 
