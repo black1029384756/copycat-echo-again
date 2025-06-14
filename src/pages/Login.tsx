@@ -5,16 +5,26 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import IntroAnimation from "@/components/IntroAnimation";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showIntro, setShowIntro] = useState(true);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic here
     console.log("Login attempt:", { email, password });
   };
+
+  const handleIntroComplete = () => {
+    setShowIntro(false);
+  };
+
+  if (showIntro) {
+    return <IntroAnimation onComplete={handleIntroComplete} />;
+  }
 
   const loginOptions = [
     {
@@ -58,7 +68,7 @@ const Login = () => {
         <img 
           src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
           alt="STEM for Society Logo" 
-          className="h-64 w-64 object-contain"
+          className="h-64 w-64 object-contain opacity-50"
         />
       </div>
 
