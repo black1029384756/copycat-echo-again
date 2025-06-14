@@ -57,9 +57,21 @@ const WhyChooseSection = () => {
           {/* Right side - Features */}
           <div className="relative z-10 space-y-2 md:space-y-3 px-4 md:px-6 py-4 md:py-0">
             {whyChooseItems.map((item, index) => (
-              <div key={index} className="bg-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
+              <div key={index} className="bg-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 relative">
+                {/* Toggle icon in top right corner */}
+                <button
+                  className="absolute top-3 right-3 z-20 p-1 rounded-full hover:bg-gray-200 transition-colors"
+                  onClick={() => toggleExpanded(index)}
+                >
+                  {expandedItem === index ? (
+                    <ChevronUp className="h-4 w-4 text-gray-600" />
+                  ) : (
+                    <ChevronDown className="h-4 w-4 text-gray-600" />
+                  )}
+                </button>
+
                 <div 
-                  className="p-3 md:p-4 cursor-pointer flex items-center justify-between"
+                  className="p-3 md:p-4 cursor-pointer flex items-center pr-12"
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-center space-x-3">
@@ -68,11 +80,6 @@ const WhyChooseSection = () => {
                     </div>
                     <span className="text-sm md:text-base font-medium">{item.title}</span>
                   </div>
-                  {expandedItem === index ? (
-                    <ChevronUp className="h-4 w-4 text-gray-600" />
-                  ) : (
-                    <ChevronDown className="h-4 w-4 text-gray-600" />
-                  )}
                 </div>
                 
                 {expandedItem === index && (
