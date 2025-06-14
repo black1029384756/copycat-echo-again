@@ -46,23 +46,24 @@ const Login = () => {
         backgroundImage: `url("/lovable-uploads/c799eb43-ca01-4f5a-84fc-fc8c0a173472.png")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
       }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-10"></div>
       
-      {/* Logo positioned at top left */}
-      <div className="absolute top-8 left-8 z-20">
+      {/* Left Section - Logo centered */}
+      <div className="w-1/2 flex items-center justify-center relative z-10">
         <img 
           src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
           alt="STEM for Society Logo" 
-          className="h-16 w-16"
+          className="h-32 w-32 object-contain"
         />
       </div>
 
       {/* Right Section - Login Options */}
-      <div className="w-full flex items-center justify-end pr-8 relative z-10">
+      <div className="w-1/2 flex items-center justify-center pr-8 relative z-10">
         <div className="w-full max-w-lg space-y-6">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-800 mb-2">Our Services</h1>
