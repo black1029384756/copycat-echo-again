@@ -83,6 +83,12 @@ const Footer = () => {
                 <div className="text-sm text-blue-100">Let's Innovate, Incubate and Impact the world together!</div>
               </div>
             </div>
+            {/* Address Information */}
+            <div className="text-sm text-blue-100 space-y-1">
+              <div>217 Broadway, Floor 9, New York, NY 10007</div>
+              <div>844-402-4344</div>
+              <div>support@tomorrowhealth.com</div>
+            </div>
           </div>
 
           {/* Navigation Links */}
@@ -163,7 +169,7 @@ const Footer = () => {
               <Youtube className="h-4 w-4 text-blue-600" />
             </a>
           </div>
-          <p className="text-blue-200 text-xs">
+          <p className="text-blue-200 text-xs text-center w-full md:w-auto">
             © 2025 STEM for society. All rights reserved.
           </p>
         </div>
