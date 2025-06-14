@@ -45,7 +45,7 @@ const Login = () => {
       style={{
         backgroundImage: `url("/lovable-uploads/89cbe888-d974-42ee-a6ee-9ce3e9b60fb4.png")`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center bottom',
+        backgroundPosition: 'center 80%',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed'
       }}
