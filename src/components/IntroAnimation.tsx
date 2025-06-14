@@ -7,7 +7,7 @@ const IntroAnimation = ({ onComplete }: { onComplete: () => void }) => {
 
   useEffect(() => {
     const timer1 = setTimeout(() => setAnimationStage(1), 200);
-    const timer2 = setTimeout(() => setAnimationStage(2), 1000);
+    const timer2 = setTimeout(() => setAnimationStage(2), 1500);
     const timer3 = setTimeout(() => {
       setIsVisible(false);
       onComplete();
@@ -24,12 +24,9 @@ const IntroAnimation = ({ onComplete }: { onComplete: () => void }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url("/lovable-uploads/c96202c2-70b0-4f3e-8b73-9a36a845c7e3.png")`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
       }}
     >
       {/* Logo Animation */}
