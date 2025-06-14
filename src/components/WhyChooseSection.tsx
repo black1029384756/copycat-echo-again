@@ -11,11 +11,11 @@ const WhyChooseSection = () => {
     <section className="py-8 md:py-12 bg-white w-full overflow-hidden">
       <div className="w-full max-w-none px-0">
         <div className="grid md:grid-cols-2 items-center relative min-h-[400px] md:min-h-[500px]">
-          {/* Background image with 70% opacity covering full section */}
+          {/* Background image with 80% opacity on left side only */}
           <div 
-            className="absolute inset-0 w-full h-full opacity-70 bg-cover bg-center bg-no-repeat bg-fixed"
+            className="absolute left-0 top-0 w-full md:w-1/2 h-full opacity-80 bg-cover bg-center bg-no-repeat"
             style={{ 
-              backgroundImage: 'url(/lovable-uploads/67328f51-8d07-4749-915c-0ea3dfac6080.png)',
+              backgroundImage: 'url(/lovable-uploads/28baf67a-5d5f-4282-9bd1-e2ff93c77a38.png)',
               backgroundColor: '#C0E1FF'
             }}
           ></div>
