@@ -45,7 +45,7 @@ const Login = () => {
       style={{
         backgroundImage: `url("/lovable-uploads/89cbe888-d974-42ee-a6ee-9ce3e9b60fb4.png")`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center top',
+        backgroundPosition: 'center bottom',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed'
       }}
@@ -58,7 +58,7 @@ const Login = () => {
         <img 
           src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
           alt="STEM for Society Logo" 
-          className="h-48 w-48 object-contain"
+          className="h-64 w-64 object-contain"
         />
       </div>
 
