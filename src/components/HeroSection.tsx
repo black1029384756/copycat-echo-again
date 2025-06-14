@@ -37,17 +37,17 @@ const HeroSection = () => {
 
   return (
     <section className="py-12 bg-white relative overflow-hidden">
-      {/* Animated Grid Background with fade */}
+      {/* Fading Grid Background */}
       <div 
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px)
+            linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
           `,
           backgroundSize: '30px 30px',
-          mask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-          WebkitMask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
+          mask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%)',
+          WebkitMask: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%)'
         }}
       />
 
