@@ -24,9 +24,9 @@ const PartnersSection = () => {
   }, [partners.length]);
 
   return (
-    <section className="py-12 md:py-16 bg-gray-50">
+    <section className="py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4 text-center max-w-7xl">
-        <h2 className="text-2xl md:text-3xl font-bold mb-12 md:mb-16 text-gray-800">Industrial & Academic Partners</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-16 md:mb-20 text-gray-800">Industrial & Academic Partners</h2>
         
         {/* Auto-scrolling for all screen sizes */}
         <div className="overflow-hidden">
@@ -37,20 +37,19 @@ const PartnersSection = () => {
             {partners.concat(partners).map((partner, index) => (
               <div key={index} className="flex items-center justify-center flex-shrink-0" style={{ width: `${100 / partners.length}%` }}>
                 <div className="flex items-center justify-center">
-                  <div className="flex items-center justify-center h-24 w-48 bg-white rounded-lg shadow-sm p-4">
+                  <div className="flex items-center justify-center h-28 w-52 bg-white rounded-lg shadow-sm p-4">
                     <img 
                       src={partner.logo} 
                       alt={partner.name}
-                      className="max-h-20 max-w-44 object-contain"
+                      className="max-h-24 max-w-48 object-contain"
                     />
                   </div>
-                  {index < partners.concat(partners).length - 1 && (
-                    <div className="flex items-center justify-center ml-8">
-                      <svg width="32" height="32" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.0621 1.53451C22.3843 0.663891 23.6157 0.663888 23.9379 1.53451L29.3226 16.0866C29.4239 16.3603 29.6397 16.5761 29.9134 16.6774L44.4655 22.0621C45.3361 22.3843 45.3361 23.6157 44.4655 23.9379L29.9134 29.3226C29.6397 29.4239 29.4239 29.6397 29.3226 29.9134L23.9379 44.4655C23.6157 45.3361 22.3843 45.3361 22.0621 44.4655L16.6774 29.9134C16.5761 29.6397 16.3603 29.4239 16.0866 29.3226L1.53451 23.9379C0.663891 23.6157 0.663888 22.3843 1.53451 22.0621L16.0866 16.6774C16.3603 16.5761 16.5761 16.3603 16.6774 16.0866L22.0621 1.53451Z" fill="#00549F"/>
-                      </svg>
-                    </div>
-                  )}
+                  {/* Show star for all items except the last one */}
+                  <div className="flex items-center justify-center ml-8">
+                    <svg width="32" height="32" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22.0621 1.53451C22.3843 0.663891 23.6157 0.663888 23.9379 1.53451L29.3226 16.0866C29.4239 16.3603 29.6397 16.5761 29.9134 16.6774L44.4655 22.0621C45.3361 22.3843 45.3361 23.6157 44.4655 23.9379L29.9134 29.3226C29.6397 29.4239 29.4239 29.6397 29.3226 29.9134L23.9379 44.4655C23.6157 45.3361 22.3843 45.3361 22.0621 44.4655L16.6774 29.9134C16.5761 29.6397 16.3603 29.4239 16.0866 29.3226L1.53451 23.9379C0.663891 23.6157 0.663888 22.3843 1.53451 22.0621L16.0866 16.6774C16.3603 16.5761 16.5761 16.3603 16.6774 16.0866L22.0621 1.53451Z" fill="#00549F"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
             ))}
