@@ -24,28 +24,28 @@ const PartnersSection = () => {
   }, [partners.length]);
 
   return (
-    <section className="py-8 bg-gray-50">
+    <section className="py-6 md:py-8 bg-gray-50">
       <div className="container mx-auto px-4 text-center max-w-7xl">
-        <h2 className="text-xl md:text-2xl font-bold mb-8 text-gray-800">Industrial & Academic Partners</h2>
+        <h2 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-gray-800">Industrial & Academic Partners</h2>
         
         {/* Desktop View - Auto-scrolling */}
         <div className="hidden lg:block overflow-hidden">
           <div 
-            className="flex items-center transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 20}%)` }}
+            className="flex items-center transition-transform duration-500 ease-in-out gap-8"
+            style={{ transform: `translateX(-${currentIndex * 16.66}%)` }}
           >
             {partners.concat(partners).map((partner, index) => (
-              <div key={index} className="flex items-center min-w-[20%] px-4">
-                <div className="flex items-center justify-center h-16 bg-white rounded-lg shadow-sm p-3 mx-2">
+              <div key={index} className="flex items-center min-w-[16.66%]">
+                <div className="flex items-center justify-center h-16 w-32 bg-white rounded-lg shadow-sm p-3 mx-2">
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className="max-h-12 max-w-24 object-contain"
+                    className="max-h-12 max-w-28 object-contain"
                   />
                 </div>
                 {index < partners.concat(partners).length - 1 && (
-                  <div className="flex items-center justify-center mx-2">
-                    <svg width="32" height="32" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div className="flex items-center justify-center">
+                    <svg width="24" height="24" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M22.0621 1.53451C22.3843 0.663891 23.6157 0.663888 23.9379 1.53451L29.3226 16.0866C29.4239 16.3603 29.6397 16.5761 29.9134 16.6774L44.4655 22.0621C45.3361 22.3843 45.3361 23.6157 44.4655 23.9379L29.9134 29.3226C29.6397 29.4239 29.4239 29.6397 29.3226 29.9134L23.9379 44.4655C23.6157 45.3361 22.3843 45.3361 22.0621 44.4655L16.6774 29.9134C16.5761 29.6397 16.3603 29.4239 16.0866 29.3226L1.53451 23.9379C0.663891 23.6157 0.663888 22.3843 1.53451 22.0621L16.0866 16.6774C16.3603 16.5761 16.5761 16.3603 16.6774 16.0866L22.0621 1.53451Z" fill="#00549F"/>
                     </svg>
                   </div>
@@ -58,19 +58,19 @@ const PartnersSection = () => {
         {/* Mobile and Tablet View - Carousel */}
         <div className="lg:hidden">
           <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-1 md:-ml-2">
               {partners.map((partner, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3">
-                  <div className="flex flex-col items-center space-y-3">
-                    <div className="flex items-center justify-center h-20 w-full bg-white rounded-lg shadow-sm p-4">
+                <CarouselItem key={index} className="pl-1 md:pl-2 basis-1/2 md:basis-1/3">
+                  <div className="flex flex-col items-center space-y-2">
+                    <div className="flex items-center justify-center h-16 md:h-20 w-full bg-white rounded-lg shadow-sm p-3 md:p-4">
                       <img 
                         src={partner.logo} 
                         alt={partner.name}
-                        className="max-h-16 max-w-full object-contain"
+                        className="max-h-10 md:max-h-14 max-w-full object-contain"
                       />
                     </div>
                     <div className="flex items-center justify-center">
-                      <svg width="24" height="24" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg width="16" height="16" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22.0621 1.53451C22.3843 0.663891 23.6157 0.663888 23.9379 1.53451L29.3226 16.0866C29.4239 16.3603 29.6397 16.5761 29.9134 16.6774L44.4655 22.0621C45.3361 22.3843 45.3361 23.6157 44.4655 23.9379L29.9134 29.3226C29.6397 29.4239 29.4239 29.6397 29.3226 29.9134L23.9379 44.4655C23.6157 45.3361 22.3843 45.3361 22.0621 44.4655L16.6774 29.9134C16.5761 29.6397 16.3603 29.4239 16.0866 29.3226L1.53451 23.9379C0.663891 23.6157 0.663888 22.3843 1.53451 22.0621L16.0866 16.6774C16.3603 16.5761 16.5761 16.3603 16.6774 16.0866L22.0621 1.53451Z" fill="#00549F"/>
                       </svg>
                     </div>
@@ -78,8 +78,8 @@ const PartnersSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
+            <CarouselPrevious className="left-1 md:left-2" />
+            <CarouselNext className="right-1 md:right-2" />
           </Carousel>
         </div>
       </div>
