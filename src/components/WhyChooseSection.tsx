@@ -11,9 +11,9 @@ const WhyChooseSection = () => {
     <section className="py-8 md:py-12 bg-white w-full overflow-hidden">
       <div className="w-full max-w-none px-0">
         <div className="grid md:grid-cols-2 items-center relative min-h-[400px] md:min-h-[500px]">
-          {/* Background image with 50% opacity on left side */}
+          {/* Background image with 70% opacity covering full section */}
           <div 
-            className="absolute left-0 top-0 w-full md:w-1/2 h-full opacity-50 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 w-full h-full opacity-70 bg-cover bg-center bg-no-repeat bg-fixed"
             style={{ 
               backgroundImage: 'url(/lovable-uploads/67328f51-8d07-4749-915c-0ea3dfac6080.png)',
               backgroundColor: '#C0E1FF'
