@@ -19,12 +19,12 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-8" style={{ backgroundColor: '#C0E1FF' }}>
+    <section className="py-8" style={{ backgroundColor: '#FFFFF' }}>
       <div className="container mx-auto px-4 max-w-7xl">
         <h2 className="text-2xl font-bold text-center mb-6">Testimonials</h2>
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="p-4">
+            <Card key={index} className="p-4" style={{ backgroundColor: '#C0E1FF' }}>
               <CardContent className="p-0">
                 <div className="flex mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
