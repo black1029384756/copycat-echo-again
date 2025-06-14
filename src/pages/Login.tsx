@@ -45,13 +45,13 @@ const Login = () => {
       style={{
         backgroundImage: `url("/lovable-uploads/89cbe888-d974-42ee-a6ee-9ce3e9b60fb4.png")`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center 80%',
+        backgroundPosition: 'center 70%',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed'
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-5"></div>
       
       {/* Left Section - Logo centered */}
       <div className="w-1/2 flex items-center justify-center relative z-10">
