@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -493,10 +492,10 @@ const CampusAmbassadorSignup = () => {
           backgroundPosition: 'center bottom',
         }}
       />
-      
+
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-      
+
       {/* Main Content Container */}
       <div className="relative z-10 min-h-screen flex">
         {/* Left Section - Logo (Desktop Only) */}
@@ -513,12 +512,9 @@ const CampusAmbassadorSignup = () => {
         </div>
 
         {/* Right Section - Form with White Transparent Background and Curved Left Corner */}
-        <div className="w-full lg:w-1/2 relative">
-          {/* White transparent overlay with curved left corner */}
-          <div className="absolute inset-0 bg-white/90 lg:rounded-l-3xl"></div>
-          
+        <div className="w-full lg:w-1/2 relative flex flex-col items-center">
           {/* Mobile Logo (Mobile Only) */}
-          <div className="lg:hidden relative z-10 flex items-center justify-center pt-8 pb-4">
+          <div className="lg:hidden pt-8 pb-4 flex justify-center w-full relative z-10">
             <div className="text-center text-white">
               <img 
                 src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
@@ -529,9 +525,11 @@ const CampusAmbassadorSignup = () => {
               <p className="text-sm">Join us to Innovate, Incubate and Impact!</p>
             </div>
           </div>
+          {/* White transparent overlay with curved left corner for desktop */}
+          <div className="absolute inset-0 bg-white/90 lg:rounded-l-3xl"></div>
           
           {/* Form Container with scroll */}
-          <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8 lg:py-4">
+          <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8 lg:py-4 w-full">
             <div className="w-full max-w-md bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
               <div className="text-center mb-8">
                 <h1 className="text-3xl font-bold text-gray-800 mb-2">
@@ -541,7 +539,6 @@ const CampusAmbassadorSignup = () => {
                   Join our community and make an impact
                 </p>
               </div>
-
               <StepIndicator />
 
               <Form {...form}>
