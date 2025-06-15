@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,5 +100,82 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations for login page */
+@keyframes slide-in-logo {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(10%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.6));
+    transform: scale(1.02);
+  }
+}
+
+@keyframes subtle-zoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fade-in-delayed {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-logo {
+  animation: slide-in-logo 1.2s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.animate-subtle-zoom {
+  animation: subtle-zoom 20s ease-in-out infinite;
+}
+
+.animate-fade-in-delayed {
+  animation: fade-in-delayed 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animate-slide-in-logo {
+    animation-duration: 1s;
+  }
+  
+  .animate-subtle-zoom {
+    animation-duration: 15s;
   }
 }
