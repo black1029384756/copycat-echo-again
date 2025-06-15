@@ -2,10 +2,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "react-router-dom";
-import AuthLayout from "@/components/AuthLayout";
+import SignupLayout from "@/components/SignupLayout";
+import StepIndicator from "@/components/StepIndicator";
 
 const PartnerInstitutionSignup = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -49,29 +49,6 @@ const PartnerInstitutionSignup = () => {
   const sendOTP = () => {
     console.log("Sending OTP to:", formData.instructorMobile);
   };
-
-  const StepIndicator = () => (
-    <div className="flex items-center justify-center mb-8">
-      {[1, 2, 3].map((step) => (
-        <div key={step} className="flex items-center">
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-            step === currentStep 
-              ? 'bg-blue-600 text-white' 
-              : step < currentStep 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-200 text-gray-600'
-          }`}>
-            {step}
-          </div>
-          {step < 3 && (
-            <div className={`w-16 h-0.5 mx-2 ${
-              step < currentStep ? 'bg-blue-600' : 'bg-gray-200'
-            }`} />
-          )}
-        </div>
-      ))}
-    </div>
-  );
 
   const renderStepContent = () => {
     switch (currentStep) {
@@ -270,9 +247,9 @@ const PartnerInstitutionSignup = () => {
   };
 
   return (
-    <AuthLayout 
-      backgroundImage="/lovable-uploads/89cbe888-d974-42ee-a6ee-9ce3e9b60fb4.png"
-      showLogo={true}
+    <SignupLayout 
+      title="Partner with us to make an impact" 
+      subtitle="Let's Partner and Impact!"
     >
       <div className="w-full max-w-md mx-auto">
         <div className="text-center mb-6">
@@ -285,7 +262,7 @@ const PartnerInstitutionSignup = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          <StepIndicator />
+          <StepIndicator currentStep={currentStep} totalSteps={3} />
           
           {renderStepContent()}
 
@@ -319,7 +296,7 @@ const PartnerInstitutionSignup = () => {
           </div>
         </form>
       </div>
-    </AuthLayout>
+    </SignupLayout>
   );
 };
 
