@@ -1,6 +1,7 @@
 
 import LoginStages from "@/components/LoginStages";
 import LoginForm from "@/components/LoginForm";
+import AuthLayout from "@/components/AuthLayout";
 
 const Login = () => {
   return (
@@ -10,7 +11,7 @@ const Login = () => {
         className="absolute inset-0 bg-cover animate-subtle-zoom"
         style={{
           backgroundImage: `url("/lovable-uploads/89cbe888-d974-42ee-a6ee-9ce3e9b60fb4.png")`,
-          backgroundPosition: 'center top',
+          backgroundPosition: 'center bottom',
         }}
       />
       
@@ -70,8 +71,8 @@ const Login = () => {
                 {/* White transparent overlay with curved left corner */}
                 <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
                 
-                {/* Form Container */}
-                <div className="relative z-10 h-full flex items-center justify-center px-4 md:px-8">
+                {/* Form Container with scroll */}
+                <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-4">
                   <LoginForm />
                 </div>
               </div>
@@ -92,7 +93,7 @@ const Login = () => {
                 {/* Mobile Form with white overlay and curved corners */}
                 <div className="flex-1 relative">
                   <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
-                  <div className="relative z-10 flex items-start justify-center px-4 pt-8">
+                  <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
                     <div className="w-full max-w-sm">
                       <LoginForm />
                     </div>
