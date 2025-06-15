@@ -22,7 +22,7 @@ const Login = () => {
           {(stage) => (
             <>
               {/* Logo Element */}
-              <div className={`absolute top-1/2 -translate-y-1/2 transition-all ease-out duration-[2000ms] ${
+              <div className={`absolute top-1/2 -translate-y-1/2 transition-all ease-out duration-[3000ms] ${
                 stage === 'initial' || stage === 'textFadeOut'
                   ? 'left-1/2 -translate-x-1/2' 
                   : 'left-[30%] -translate-x-1/2'
@@ -30,7 +30,7 @@ const Login = () => {
                 <img 
                   src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
                   alt="STEM for Society Logo" 
-                  className={`object-contain transition-all ease-out duration-[2000ms] ${
+                  className={`object-contain transition-all ease-out duration-[3000ms] ${
                     stage === 'initial' || stage === 'textFadeOut'
                       ? 'h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64' 
                       : 'h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72'
