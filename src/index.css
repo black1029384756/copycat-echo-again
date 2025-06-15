@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -132,7 +133,16 @@
   }
 }
 
-@keyframes smooth-slide {
+@keyframes logo-center-to-left {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes form-slide-in {
   0% {
     transform: translateX(100%);
     opacity: 0;
@@ -140,6 +150,17 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes text-fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 }
 
@@ -153,8 +174,16 @@
   animation: subtle-zoom 20s ease-in-out infinite;
 }
 
-.animate-smooth-slide {
-  animation: smooth-slide 1.5s ease-out forwards;
+.animate-logo-transition {
+  animation: logo-center-to-left 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-form-slide-in {
+  animation: form-slide-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-text-fade-out {
+  animation: text-fade-out 1s ease-out forwards;
 }
 
 /* Responsive adjustments */
