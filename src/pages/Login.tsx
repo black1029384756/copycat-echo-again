@@ -56,8 +56,8 @@ const Login = () => {
                 </h1>
               </div>
 
-              {/* Login Form */}
-              <div className={`absolute right-0 top-0 h-full w-1/2 flex items-center justify-center px-4 md:px-8 transition-all duration-[2500ms] ${
+              {/* Login Form with Semi-transparent Background */}
+              <div className={`absolute right-0 top-0 h-full w-1/2 transition-all duration-[2500ms] ${
                 stage === 'logoTransition' 
                   ? 'translate-x-0 opacity-100' 
                   : 'translate-x-full opacity-0'
@@ -66,7 +66,13 @@ const Login = () => {
                 transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
                 transform: 'translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)'
               }}>
-                <LoginForm />
+                {/* Semi-transparent cyan/blue overlay */}
+                <div className="absolute inset-0 bg-cyan-400/50 backdrop-blur-sm"></div>
+                
+                {/* Form Container */}
+                <div className="relative z-10 h-full flex items-center justify-center px-4 md:px-8">
+                  <LoginForm />
+                </div>
               </div>
 
               {/* Mobile Layout */}
@@ -82,10 +88,13 @@ const Login = () => {
                   />
                 </div>
                 
-                {/* Mobile Form */}
-                <div className="flex-1 flex items-start justify-center px-4 pt-8">
-                  <div className="w-full max-w-sm">
-                    <LoginForm />
+                {/* Mobile Form with overlay */}
+                <div className="flex-1 relative">
+                  <div className="absolute inset-0 bg-cyan-400/50 backdrop-blur-sm"></div>
+                  <div className="relative z-10 flex items-start justify-center px-4 pt-8">
+                    <div className="w-full max-w-sm">
+                      <LoginForm />
+                    </div>
                   </div>
                 </div>
               </div>
