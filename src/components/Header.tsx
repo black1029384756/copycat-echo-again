@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -36,9 +37,11 @@ const Header = () => {
         </nav>
         
         <div className="flex items-center space-x-3">
-          <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg px-4 text-sm">
-            Partner with us
-          </Button>
+          <Link to="/partner-role">
+            <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg px-4 text-sm">
+              Partner with us
+            </Button>
+          </Link>
           <Link to="/login">
             <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-lg px-6 text-sm">
               LOGIN
