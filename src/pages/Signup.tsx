@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -52,7 +53,7 @@ const Signup = () => {
       <div className="relative z-10 min-h-screen flex">
         {/* Left Section - Logo */}
         <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center">
-          <div className="text-center text-white">
+          <div className="text-center text-white mt-16">
             <img 
               src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
               alt="STEM for Society Logo" 
@@ -242,9 +243,9 @@ const Signup = () => {
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden absolute inset-0 flex flex-col">
+        <div className="lg:hidden absolute inset-0 flex flex-col">
           {/* Mobile Logo */}
-          <div className="flex-1 flex items-center justify-center pt-16">
+          <div className="flex-1 flex items-center justify-center pt-20">
             <div className="text-center text-white">
               <img 
                 src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
