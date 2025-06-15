@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -400,8 +399,9 @@ const CampusAmbassadorSignup = () => {
     <SignupLayout 
       title="Innovate, Incubate and Impact the world together!" 
       subtitle="Join us to Innovate, Incubate and Impact!"
+      formBackgroundColor={true}
     >
-      <div className="w-full max-w-md bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+      <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
             Campus Ambassador

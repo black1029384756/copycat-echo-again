@@ -5,9 +5,10 @@ interface SignupLayoutProps {
   children: React.ReactNode;
   title?: string;
   subtitle?: string;
+  formBackgroundColor?: boolean; // New prop for Campus Ambassador form styling
 }
 
-const SignupLayout = ({ children, title, subtitle }: SignupLayoutProps) => {
+const SignupLayout = ({ children, title, subtitle, formBackgroundColor = false }: SignupLayoutProps) => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Animated Background */}
@@ -40,13 +41,19 @@ const SignupLayout = ({ children, title, subtitle }: SignupLayoutProps) => {
         </div>
 
         {/* Right Section - Form with White Transparent Background and Curved Left Corner */}
-        <div className="w-full lg:w-1/2 relative h-full">
-          {/* White transparent overlay with curved left corner */}
+        <div className="w-full lg:w-1/2 relative min-h-screen">
+          {/* White transparent overlay with curved left corner - full coverage */}
           <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
           
           {/* Form Container with scroll */}
-          <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8">
-            {children}
+          <div className="relative z-10 h-full min-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8">
+            {formBackgroundColor ? (
+              <div className="w-full max-w-md bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+                {children}
+              </div>
+            ) : (
+              children
+            )}
           </div>
         </div>
       </div>
@@ -77,11 +84,17 @@ const SignupLayout = ({ children, title, subtitle }: SignupLayoutProps) => {
           </div>
         </div>
         
-        {/* Mobile Content with white overlay and curved corners */}
+        {/* Mobile Content with white overlay and curved corners - full coverage */}
         <div className="flex-1 relative">
           <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
-          <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
-            {children}
+          <div className="relative z-10 h-full overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
+            {formBackgroundColor ? (
+              <div className="w-full max-w-sm bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-lg">
+                {children}
+              </div>
+            ) : (
+              children
+            )}
           </div>
         </div>
       </div>
