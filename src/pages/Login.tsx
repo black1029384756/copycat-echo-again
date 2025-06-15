@@ -56,7 +56,7 @@ const Login = () => {
                 </h1>
               </div>
 
-              {/* Login Form with Semi-transparent Background */}
+              {/* Login Form with White Transparent Background and Curved Left Corner */}
               <div className={`absolute right-0 top-0 h-full w-1/2 transition-all duration-[2500ms] ${
                 stage === 'logoTransition' 
                   ? 'translate-x-0 opacity-100' 
@@ -66,8 +66,8 @@ const Login = () => {
                 transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
                 transform: 'translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)'
               }}>
-                {/* Semi-transparent cyan/blue overlay */}
-                <div className="absolute inset-0 bg-cyan-400/50 backdrop-blur-sm"></div>
+                {/* White transparent overlay with curved left corner */}
+                <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
                 
                 {/* Form Container */}
                 <div className="relative z-10 h-full flex items-center justify-center px-4 md:px-8">
@@ -88,9 +88,9 @@ const Login = () => {
                   />
                 </div>
                 
-                {/* Mobile Form with overlay */}
+                {/* Mobile Form with white overlay and curved corners */}
                 <div className="flex-1 relative">
-                  <div className="absolute inset-0 bg-cyan-400/50 backdrop-blur-sm"></div>
+                  <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
                   <div className="relative z-10 flex items-start justify-center px-4 pt-8">
                     <div className="w-full max-w-sm">
                       <LoginForm />
