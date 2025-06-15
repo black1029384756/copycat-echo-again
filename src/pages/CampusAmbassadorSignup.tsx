@@ -512,24 +512,12 @@ const CampusAmbassadorSignup = () => {
         </div>
 
         {/* Right Section - Form with White Transparent Background and Curved Left Corner */}
-        <div className="w-full lg:w-1/2 relative flex flex-col items-center">
-          {/* Mobile Logo (Mobile Only) */}
-          <div className="lg:hidden pt-8 pb-4 flex justify-center w-full relative z-10">
-            <div className="text-center text-white">
-              <img 
-                src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
-                alt="STEM for Society Logo" 
-                className="h-24 w-24 mx-auto mb-4 opacity-50 animate-pulse-glow-delayed"
-              />
-              <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
-              <p className="text-sm">Join us to Innovate, Incubate and Impact!</p>
-            </div>
-          </div>
-          {/* White transparent overlay with curved left corner for desktop */}
-          <div className="absolute inset-0 bg-white/90 lg:rounded-l-3xl"></div>
+        <div className="w-full lg:w-1/2 relative">
+          {/* White transparent overlay with curved left corner */}
+          <div className="absolute inset-0 bg-white/90 backdrop-blur-sm lg:rounded-l-3xl"></div>
           
           {/* Form Container with scroll */}
-          <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8 lg:py-4 w-full">
+          <div className="relative z-10 h-full max-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8">
             <div className="w-full max-w-md bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
               <div className="text-center mb-8">
                 <h1 className="text-3xl font-bold text-gray-800 mb-2">
@@ -539,6 +527,7 @@ const CampusAmbassadorSignup = () => {
                   Join our community and make an impact
                 </p>
               </div>
+
               <StepIndicator />
 
               <Form {...form}>
@@ -581,6 +570,97 @@ const CampusAmbassadorSignup = () => {
 
               <div className="text-center mt-8">
                 <p className="text-sm text-gray-600">
+                  Already have an account?{" "}
+                  <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold">
+                    Login
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="lg:hidden absolute inset-0 flex flex-col"
+        style={{
+          backgroundImage: `url("/lovable-uploads/89cbe888-d974-42ee-a6ee-9ce3e9b60fb4.png")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center bottom',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+        
+        {/* Mobile Logo */}
+        <div className="flex-1 flex items-center justify-center pt-16 relative z-10">
+          <div className="text-center text-white">
+            <img 
+              src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
+              alt="STEM for Society Logo" 
+              className="h-24 w-24 mx-auto mb-4 opacity-50"
+            />
+            <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
+            <p className="text-sm">Join us to Innovate, Incubate and Impact!</p>
+          </div>
+        </div>
+        
+        {/* Mobile Content with white overlay and curved corners */}
+        <div className="flex-1 relative">
+          <div className="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-t-3xl"></div>
+          <div className="relative z-10 max-h-[60vh] overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
+            <div className="w-full max-w-sm bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-lg">
+              <div className="text-center mb-6">
+                <h1 className="text-2xl font-bold text-gray-800 mb-2">
+                  Campus Ambassador
+                </h1>
+                <p className="text-gray-600 text-sm">
+                  Join our community and make an impact
+                </p>
+              </div>
+
+              <StepIndicator />
+
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  {renderStep()}
+
+                  <div className="flex justify-between pt-4">
+                    {currentStep > 1 && (
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={prevStep}
+                        className="px-4 text-sm"
+                      >
+                        Back
+                      </Button>
+                    )}
+                    
+                    <div className="flex-1" />
+                    
+                    {currentStep < 3 ? (
+                      <Button
+                        type="button"
+                        onClick={nextStep}
+                        className="bg-blue-600 hover:bg-blue-700 px-4 text-sm"
+                      >
+                        Continue
+                      </Button>
+                    ) : (
+                      <Button
+                        type="submit"
+                        className="bg-blue-600 hover:bg-blue-700 px-4 text-sm"
+                      >
+                        Sign Up
+                      </Button>
+                    )}
+                  </div>
+                </form>
+              </Form>
+
+              <div className="text-center mt-6">
+                <p className="text-xs text-gray-600">
                   Already have an account?{" "}
                   <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold">
                     Login
