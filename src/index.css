@@ -132,6 +132,17 @@
   }
 }
 
+@keyframes smooth-slide {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* Animation classes */
 .animate-pulse-glow-delayed {
   animation: pulse-glow-delayed 3s ease-in-out infinite;
@@ -140,6 +151,10 @@
 
 .animate-subtle-zoom {
   animation: subtle-zoom 20s ease-in-out infinite;
+}
+
+.animate-smooth-slide {
+  animation: smooth-slide 1.5s ease-out forwards;
 }
 
 /* Responsive adjustments */
