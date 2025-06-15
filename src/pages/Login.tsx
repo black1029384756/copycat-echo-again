@@ -22,19 +22,26 @@ const Login = () => {
           {(stage) => (
             <>
               {/* Logo Element */}
-              <div className={`absolute top-1/2 -translate-y-1/2 transition-all ease-out duration-[3000ms] ${
+              <div className={`absolute top-1/2 -translate-y-1/2 transition-all duration-[2500ms] ${
                 stage === 'initial' || stage === 'textFadeOut'
                   ? 'left-1/2 -translate-x-1/2' 
                   : 'left-[30%] -translate-x-1/2'
-              }`}>
+              }`}
+              style={{
+                transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
+                transform: 'translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)'
+              }}>
                 <img 
                   src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
                   alt="STEM for Society Logo" 
-                  className={`object-contain transition-all ease-out duration-[3000ms] ${
+                  className={`object-contain transition-all duration-[2500ms] ${
                     stage === 'initial' || stage === 'textFadeOut'
                       ? 'h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64' 
                       : 'h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72 opacity-50'
                   } ${stage === 'logoTransition' ? 'animate-pulse-glow-delayed' : ''}`}
+                  style={{
+                    transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)'
+                  }}
                 />
               </div>
 
@@ -50,11 +57,15 @@ const Login = () => {
               </div>
 
               {/* Login Form */}
-              <div className={`absolute right-0 top-0 h-full w-1/2 flex items-center justify-center px-4 md:px-8 transition-all duration-[3000ms] ease-out ${
+              <div className={`absolute right-0 top-0 h-full w-1/2 flex items-center justify-center px-4 md:px-8 transition-all duration-[2500ms] ${
                 stage === 'logoTransition' 
                   ? 'translate-x-0 opacity-100' 
                   : 'translate-x-full opacity-0'
-              }`}>
+              }`}
+              style={{
+                transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
+                transform: 'translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)'
+              }}>
                 <LoginForm />
               </div>
 
