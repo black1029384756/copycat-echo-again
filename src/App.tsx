@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Explore from "./pages/Explore";
 import Signup from "./pages/Signup";
 import PartnerRole from "./pages/PartnerRole";
+import CampusAmbassadorSignup from "./pages/CampusAmbassadorSignup";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/explore" element={<Explore />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/partner-role" element={<PartnerRole />} />
+          <Route path="/campus-ambassador-signup" element={<CampusAmbassadorSignup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
