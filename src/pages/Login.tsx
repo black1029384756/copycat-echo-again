@@ -22,20 +22,18 @@ const Login = () => {
           {(stage) => (
             <>
               {/* Logo Element */}
-              <div className={`absolute transition-all ease-out ${
+              <div className={`absolute top-1/2 -translate-y-1/2 transition-all ease-out duration-[2000ms] ${
                 stage === 'initial' || stage === 'textFadeOut'
-                  ? 'inset-0 flex items-center justify-center duration-0' 
-                  : stage === 'logoTransition'
-                  ? 'left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 duration-[2000ms]'
-                  : 'left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 duration-0'
+                  ? 'left-1/2 -translate-x-1/2' 
+                  : 'left-[30%] -translate-x-1/2'
               }`}>
                 <img 
                   src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
                   alt="STEM for Society Logo" 
-                  className={`object-contain transition-all ease-out ${
+                  className={`object-contain transition-all ease-out duration-[2000ms] ${
                     stage === 'initial' || stage === 'textFadeOut'
-                      ? 'h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64 duration-0' 
-                      : 'h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72 duration-[2000ms]'
+                      ? 'h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64' 
+                      : 'h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72'
                   } ${stage === 'finalLayout' ? 'animate-pulse-glow-delayed' : ''}`}
                 />
               </div>
