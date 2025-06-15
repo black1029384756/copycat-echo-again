@@ -33,8 +33,8 @@ const Login = () => {
                   className={`object-contain transition-all ease-out duration-[3000ms] ${
                     stage === 'initial' || stage === 'textFadeOut'
                       ? 'h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64' 
-                      : 'h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72'
-                  } ${stage === 'finalLayout' ? 'animate-pulse-glow-delayed' : ''}`}
+                      : 'h-40 w-40 md:h-56 md:w-56 lg:h-72 lg:w-72 opacity-50'
+                  } ${stage === 'logoTransition' ? 'animate-pulse-glow-delayed' : ''}`}
                 />
               </div>
 
@@ -50,24 +50,24 @@ const Login = () => {
               </div>
 
               {/* Login Form */}
-              <div className={`absolute right-0 top-0 h-full w-1/2 flex items-center justify-center px-4 md:px-8 ${
-                stage === 'finalLayout' 
-                  ? 'animate-form-slide-in' 
-                  : 'opacity-0 translate-x-full'
+              <div className={`absolute right-0 top-0 h-full w-1/2 flex items-center justify-center px-4 md:px-8 transition-all duration-[3000ms] ease-out ${
+                stage === 'logoTransition' 
+                  ? 'translate-x-0 opacity-100' 
+                  : 'translate-x-full opacity-0'
               }`}>
                 <LoginForm />
               </div>
 
               {/* Mobile Layout */}
               <div className={`md:hidden absolute inset-0 transition-all duration-1000 ease-out ${
-                stage === 'finalLayout' ? 'opacity-100' : 'opacity-0'
+                stage === 'logoTransition' ? 'opacity-100' : 'opacity-0'
               }`}>
                 {/* Mobile Logo */}
                 <div className="flex-1 flex items-center justify-center pt-16">
                   <img 
                     src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
                     alt="STEM for Society Logo" 
-                    className="h-24 w-24 object-contain animate-pulse-glow-delayed"
+                    className="h-24 w-24 object-contain animate-pulse-glow-delayed opacity-50"
                   />
                 </div>
                 
