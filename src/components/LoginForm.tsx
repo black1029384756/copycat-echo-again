@@ -19,10 +19,10 @@ const LoginForm = () => {
     <Card className="w-full max-w-md bg-white/95 backdrop-blur-md shadow-2xl border-0">
       <CardHeader className="space-y-1 text-center">
         <CardTitle className="text-2xl md:text-3xl font-bold text-gray-800">
-          Welcome Back
+          Login as Student
         </CardTitle>
         <CardDescription className="text-gray-600">
-          Sign in to your account to continue
+          Enter your credentials to proceed further
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">

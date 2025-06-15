@@ -25,7 +25,7 @@ const Login = () => {
               <div className={`absolute top-1/2 -translate-y-1/2 transition-all duration-[2500ms] ${
                 stage === 'initial' || stage === 'textFadeOut'
                   ? 'left-1/2 -translate-x-1/2' 
-                  : 'left-[30%] -translate-x-1/2'
+                  : 'left-[25%] -translate-x-1/2'
               }`}
               style={{
                 transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
