@@ -11,7 +11,7 @@ const Login = () => {
         className="absolute inset-0 bg-cover animate-subtle-zoom"
         style={{
           backgroundImage: `url("/lovable-uploads/89cbe888-d974-42ee-a6ee-9ce3e9b60fb4.png")`,
-          backgroundPosition: 'center bottom',
+          backgroundPosition: 'center 75%',
         }}
       />
       
