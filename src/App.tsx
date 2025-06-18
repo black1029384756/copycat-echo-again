@@ -19,6 +19,8 @@ import PsychologyCounselling from "./pages/PsychologyCounselling";
 import CareerCounselling from "./pages/CareerCounselling";
 import InstitutionalPlanPricing from "./pages/InstitutionalPlanPricing";
 import CampusAmbassador from "./pages/CampusAmbassador";
+import ScientificCommunication from "./pages/ScientificCommunication";
+import JoinCommunity from "./pages/JoinCommunity";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -45,6 +47,8 @@ const App = () => (
           <Route path="/career-counselling" element={<CareerCounselling />} />
           <Route path="/institutional-plan-pricing" element={<InstitutionalPlanPricing />} />
           <Route path="/campus-ambassador" element={<CampusAmbassador />} />
+          <Route path="/scientific-communication" element={<ScientificCommunication />} />
+          <Route path="/join-community" element={<JoinCommunity />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
