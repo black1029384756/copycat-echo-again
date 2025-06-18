@@ -42,7 +42,7 @@ const Signup = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url("/lovable-uploads/b12a3dab-9f55-4a27-b55c-f863f90283da.png")`,
-          backgroundPosition: 'center 30%',
+          backgroundPosition: 'center 75%',
         }}
       />
       
