@@ -5,7 +5,7 @@ interface SignupLayoutProps {
   children: React.ReactNode;
   title?: string;
   subtitle?: string;
-  formBackgroundColor?: boolean; // New prop for Campus Ambassador form styling
+  formBackgroundColor?: boolean;
 }
 
 const SignupLayout = ({ children, title, subtitle, formBackgroundColor = false }: SignupLayoutProps) => {
@@ -23,10 +23,10 @@ const SignupLayout = ({ children, title, subtitle, formBackgroundColor = false }
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
 
-      {/* Main Content Container */}
-      <div className="relative z-10 min-h-screen flex">
-        {/* Left Section - Logo (Desktop Only) */}
-        <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center">
+      {/* Desktop Layout */}
+      <div className="hidden lg:flex relative z-10 min-h-screen">
+        {/* Left Section - Logo */}
+        <div className="w-1/2 flex items-center justify-center">
           <div className="text-center text-white">
             <img 
               src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
@@ -40,60 +40,52 @@ const SignupLayout = ({ children, title, subtitle, formBackgroundColor = false }
           </div>
         </div>
 
-        {/* Right Section - Form with White Transparent Background and Curved Left Corner */}
-        <div className="w-full lg:w-1/2 relative min-h-screen">
-          {/* White transparent overlay with curved left corner - full coverage */}
+        {/* Right Section - Form */}
+        <div className="w-1/2 relative">
           <div className="absolute inset-0 bg-white/90 rounded-l-3xl"></div>
-          
-          {/* Form Container with scroll */}
-          <div className="relative z-10 h-full min-h-screen overflow-y-auto flex items-center justify-center px-4 md:px-8 py-8">
+          <div className="relative z-10 h-full overflow-y-auto flex items-center justify-center px-8 py-8">
             {formBackgroundColor ? (
               <div className="w-full max-w-md bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg">
                 {children}
               </div>
             ) : (
-              children
+              <div className="w-full max-w-md">
+                {children}
+              </div>
             )}
           </div>
         </div>
       </div>
 
       {/* Mobile Layout */}
-      <div className="lg:hidden absolute inset-0 flex flex-col"
-        style={{
-          backgroundImage: `url("/lovable-uploads/89cbe888-d974-42ee-a6ee-9ce3e9b60fb4.png")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center bottom',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-        
-        {/* Mobile Logo */}
-        <div className="flex-1 flex items-center justify-center pt-16 relative z-10">
+      <div className="lg:hidden relative z-10 min-h-screen flex flex-col">
+        {/* Mobile Logo Section */}
+        <div className="flex-shrink-0 flex items-center justify-center pt-8 pb-4">
           <div className="text-center text-white">
             <img 
               src="/lovable-uploads/a42a1abc-16cd-4410-8cf7-324a6c97ac20.png" 
               alt="STEM for Society Logo" 
-              className="h-24 w-24 mx-auto mb-4 opacity-50"
+              className="h-20 w-20 mx-auto mb-2 opacity-50"
             />
-            <h1 className="text-2xl font-bold mb-2">STEM FOR SOCIETY</h1>
-            <p className="text-sm">
+            <h1 className="text-xl font-bold mb-1">STEM FOR SOCIETY</h1>
+            <p className="text-xs">
               {subtitle || "Join us to Innovate, Incubate and Impact!"}
             </p>
           </div>
         </div>
         
-        {/* Mobile Content with white overlay and curved corners - full coverage */}
+        {/* Mobile Form Section */}
         <div className="flex-1 relative">
           <div className="absolute inset-0 bg-white/90 rounded-t-3xl"></div>
-          <div className="relative z-10 h-full overflow-y-auto flex items-start justify-center px-4 pt-8 pb-4">
+          <div className="relative z-10 h-full overflow-y-auto px-4 pt-6 pb-8">
             {formBackgroundColor ? (
-              <div className="w-full max-w-sm bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-lg">
+              <div className="w-full max-w-sm mx-auto bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-lg">
                 {children}
               </div>
             ) : (
-              children
+              <div className="w-full max-w-sm mx-auto">
+                {children}
+              </div>
             )}
           </div>
         </div>

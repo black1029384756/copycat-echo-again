@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,22 +9,17 @@ import StepIndicator from "@/components/StepIndicator";
 const PartnerInstitutionSignup = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
-    // Step 1: Institution Information
     institutionName: "",
     addressLine1: "",
     addressLine2: "",
     city: "",
     pincode: "",
-    
-    // Step 2: Instructor Details
     gstNumber: "",
     instructorName: "",
     country: "India",
     instructorMobile: "",
     otp: "",
     email: "",
-    
-    // Step 3: Title & Sector
     teachingTopic: "",
     sector: "",
     acceptTerms: false
@@ -55,7 +49,7 @@ const PartnerInstitutionSignup = () => {
       case 1:
         return (
           <div className="space-y-4">
-            <div className="text-right text-sm text-gray-600 mb-4">
+            <div className="text-right text-xs lg:text-sm text-gray-600 mb-4">
               Institution Information
             </div>
             
@@ -64,7 +58,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="Enter the institution name"
                 value={formData.institutionName}
                 onChange={(e) => handleInputChange('institutionName', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -73,7 +67,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="Address line 1"
                 value={formData.addressLine1}
                 onChange={(e) => handleInputChange('addressLine1', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -82,7 +76,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="Address line 2"
                 value={formData.addressLine2}
                 onChange={(e) => handleInputChange('addressLine2', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -91,7 +85,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="City"
                 value={formData.city}
                 onChange={(e) => handleInputChange('city', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -100,7 +94,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="Pincode"
                 value={formData.pincode}
                 onChange={(e) => handleInputChange('pincode', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
           </div>
@@ -109,7 +103,7 @@ const PartnerInstitutionSignup = () => {
       case 2:
         return (
           <div className="space-y-4">
-            <div className="text-right text-sm text-gray-600 mb-4">
+            <div className="text-right text-xs lg:text-sm text-gray-600 mb-4">
               Instructor Details
             </div>
             
@@ -118,7 +112,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="GST number"
                 value={formData.gstNumber}
                 onChange={(e) => handleInputChange('gstNumber', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -127,7 +121,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="Instructor name"
                 value={formData.instructorName}
                 onChange={(e) => handleInputChange('instructorName', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -137,7 +131,7 @@ const PartnerInstitutionSignup = () => {
                   placeholder="Country"
                   value={formData.country}
                   onChange={(e) => handleInputChange('country', e.target.value)}
-                  className="bg-white/80"
+                  className="bg-white/80 text-sm"
                 />
               </div>
               <div className="flex-1">
@@ -145,7 +139,7 @@ const PartnerInstitutionSignup = () => {
                   placeholder="Instructor Mobile Number"
                   value={formData.instructorMobile}
                   onChange={(e) => handleInputChange('instructorMobile', e.target.value)}
-                  className="bg-white/80"
+                  className="bg-white/80 text-sm"
                 />
               </div>
             </div>
@@ -167,7 +161,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="Send OTP"
                 value={formData.otp}
                 onChange={(e) => handleInputChange('otp', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -177,7 +171,7 @@ const PartnerInstitutionSignup = () => {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -202,7 +196,7 @@ const PartnerInstitutionSignup = () => {
       case 3:
         return (
           <div className="space-y-4">
-            <div className="text-right text-sm text-gray-600 mb-4">
+            <div className="text-right text-xs lg:text-sm text-gray-600 mb-4">
               Title & sector
             </div>
             
@@ -211,7 +205,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="Topic you will be teaching?"
                 value={formData.teachingTopic}
                 onChange={(e) => handleInputChange('teachingTopic', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -220,7 +214,7 @@ const PartnerInstitutionSignup = () => {
                 placeholder="Sector"
                 value={formData.sector}
                 onChange={(e) => handleInputChange('sector', e.target.value)}
-                className="bg-white/80"
+                className="bg-white/80 text-sm"
               />
             </div>
             
@@ -251,17 +245,17 @@ const PartnerInstitutionSignup = () => {
       title="Partner with us to make an impact" 
       subtitle="Let's Partner and Impact!"
     >
-      <div className="w-full max-w-md mx-auto">
-        <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">Partner with us</h1>
-          <p className="text-gray-600 text-sm">
+      <div className="w-full">
+        <div className="text-center mb-4 lg:mb-6">
+          <h1 className="text-xl lg:text-2xl font-bold text-gray-800 mb-2">Partner with us</h1>
+          <p className="text-gray-600 text-xs lg:text-sm">
             {currentStep === 1 && "Enter your details to proceed further"}
             {currentStep === 2 && "Enter your credentials to proceed further"}
             {currentStep === 3 && "Enter your credentials to proceed further"}
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
           <StepIndicator currentStep={currentStep} totalSteps={3} />
           
           {renderStepContent()}
@@ -271,14 +265,14 @@ const PartnerInstitutionSignup = () => {
               <Button
                 type="button"
                 onClick={handleNext}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 lg:py-3 text-sm"
               >
                 CONTINUE
               </Button>
             ) : (
               <Button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 lg:py-3 text-sm"
                 disabled={!formData.acceptTerms}
               >
                 SIGN UP
@@ -287,7 +281,7 @@ const PartnerInstitutionSignup = () => {
           </div>
 
           <div className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-xs lg:text-sm text-gray-600">
               Already have an account?{" "}
               <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold">
                 login

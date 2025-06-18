@@ -53,7 +53,6 @@ const CampusAmbassadorSignup = () => {
 
   const onSubmit = (data: FormData) => {
     console.log("Form submitted:", data);
-    // Handle form submission
   };
 
   const nextStep = async () => {
@@ -81,7 +80,6 @@ const CampusAmbassadorSignup = () => {
     const mobile = form.getValues("mobile");
     if (mobile && mobile.length >= 10) {
       setOtpSent(true);
-      // Handle OTP sending logic
       console.log("OTP sent to:", mobile);
     }
   };
@@ -91,16 +89,16 @@ const CampusAmbassadorSignup = () => {
       case 1:
         return (
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Personal Information</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-4 lg:mb-6">Personal Information</h2>
             
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Full Name</FormLabel>
+                  <FormLabel className="text-sm">Full Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your full name" {...field} />
+                    <Input placeholder="Enter your full name" {...field} className="text-sm" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -112,10 +110,10 @@ const CampusAmbassadorSignup = () => {
               name="domain"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Domain</FormLabel>
+                  <FormLabel className="text-sm">Domain</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="text-sm">
                         <SelectValue placeholder="Select your domain" />
                       </SelectTrigger>
                     </FormControl>
@@ -136,10 +134,10 @@ const CampusAmbassadorSignup = () => {
               name="state"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>State</FormLabel>
+                  <FormLabel className="text-sm">State</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="text-sm">
                         <SelectValue placeholder="Select your state" />
                       </SelectTrigger>
                     </FormControl>
@@ -162,9 +160,9 @@ const CampusAmbassadorSignup = () => {
                 name="city"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>City</FormLabel>
+                    <FormLabel className="text-sm">City</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your city" {...field} />
+                      <Input placeholder="Enter your city" {...field} className="text-sm" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -176,9 +174,9 @@ const CampusAmbassadorSignup = () => {
                 name="pincode"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Pincode</FormLabel>
+                    <FormLabel className="text-sm">Pincode</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter pincode" {...field} />
+                      <Input placeholder="Enter pincode" {...field} className="text-sm" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -191,7 +189,7 @@ const CampusAmbassadorSignup = () => {
       case 2:
         return (
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Contact Details</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-4 lg:mb-6">Contact Details</h2>
             
             <FormField
               control={form.control}
@@ -306,7 +304,7 @@ const CampusAmbassadorSignup = () => {
       case 3:
         return (
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Teaching Details</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-4 lg:mb-6">Teaching Details</h2>
             
             <FormField
               control={form.control}
@@ -401,12 +399,12 @@ const CampusAmbassadorSignup = () => {
       subtitle="Join us to Innovate, Incubate and Impact!"
       formBackgroundColor={true}
     >
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+      <div className="w-full">
+        <div className="text-center mb-6 lg:mb-8">
+          <h1 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-2">
             Campus Ambassador
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm lg:text-base">
             Join our community and make an impact
           </p>
         </div>
@@ -414,16 +412,16 @@ const CampusAmbassadorSignup = () => {
         <StepIndicator currentStep={currentStep} totalSteps={3} />
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 lg:space-y-6">
             {renderStep()}
 
-            <div className="flex justify-between pt-6">
+            <div className="flex justify-between pt-4 lg:pt-6">
               {currentStep > 1 && (
                 <Button
                   type="button"
                   variant="outline"
                   onClick={prevStep}
-                  className="px-6"
+                  className="px-4 lg:px-6 text-sm"
                 >
                   Back
                 </Button>
@@ -435,14 +433,14 @@ const CampusAmbassadorSignup = () => {
                 <Button
                   type="button"
                   onClick={nextStep}
-                  className="bg-blue-600 hover:bg-blue-700 px-6"
+                  className="bg-blue-600 hover:bg-blue-700 px-4 lg:px-6 text-sm"
                 >
                   Continue
                 </Button>
               ) : (
                 <Button
                   type="submit"
-                  className="bg-blue-600 hover:bg-blue-700 px-6"
+                  className="bg-blue-600 hover:bg-blue-700 px-4 lg:px-6 text-sm"
                 >
                   Sign Up
                 </Button>
@@ -451,8 +449,8 @@ const CampusAmbassadorSignup = () => {
           </form>
         </Form>
 
-        <div className="text-center mt-8">
-          <p className="text-sm text-gray-600">
+        <div className="text-center mt-6 lg:mt-8">
+          <p className="text-xs lg:text-sm text-gray-600">
             Already have an account?{" "}
             <Link to="/login" className="text-blue-600 hover:text-blue-700 hover:underline font-semibold">
               Login
