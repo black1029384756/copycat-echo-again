@@ -9,21 +9,25 @@ const WhyChooseSection = () => {
     {
       title: "World Class Instructors",
       content: "Learn from top industry professionals with real-world experience",
+      hoverContent: "Our instructors bring decades of industry experience from top companies like Google, Microsoft, and leading research institutions.",
       icon: <Users className="h-5 w-5 text-blue-600" />
     },
     {
       title: "1 on 1 Mentorship", 
       content: "Get personalized guidance and support throughout your learning journey",
+      hoverContent: "Dedicated mentors provide weekly one-on-one sessions, career guidance, and personalized feedback on your projects.",
       icon: <HeadphonesIcon className="h-5 w-5 text-blue-600" />
     },
     {
       title: "Industrial Training",
       content: "Hands-on experience with real industry projects and scenarios", 
+      hoverContent: "Work on live projects from partner companies, use industry-standard tools, and gain practical experience that employers value.",
       icon: <Building className="h-5 w-5 text-blue-600" />
     },
     {
       title: "Placement Assistant",
       content: "Comprehensive support for career placement and job opportunities",
+      hoverContent: "Resume building, interview preparation, job referrals, and placement guarantee with our 95% success rate.",
       icon: <Award className="h-5 w-5 text-blue-600" />
     }
   ];
@@ -57,16 +61,16 @@ const WhyChooseSection = () => {
           {/* Right side - Features */}
           <div className="relative z-10 space-y-2 md:space-y-3 px-4 md:px-6 py-4 md:py-0">
             {whyChooseItems.map((item, index) => (
-              <div key={index} className="bg-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 relative">
+              <div key={index} className="bg-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 relative hover:bg-blue-600 group cursor-pointer">
                 {/* Toggle icon in top right corner */}
                 <button
-                  className="absolute top-3 right-3 z-20 p-1 rounded-full hover:bg-gray-200 transition-colors"
+                  className="absolute top-3 right-3 z-20 p-1 rounded-full hover:bg-gray-200 group-hover:bg-blue-500 transition-colors"
                   onClick={() => toggleExpanded(index)}
                 >
                   {expandedItem === index ? (
-                    <ChevronUp className="h-4 w-4 text-gray-600" />
+                    <ChevronUp className="h-4 w-4 text-gray-600 group-hover:text-white" />
                   ) : (
-                    <ChevronDown className="h-4 w-4 text-gray-600" />
+                    <ChevronDown className="h-4 w-4 text-gray-600 group-hover:text-white" />
                   )}
                 </button>
 
@@ -75,17 +79,28 @@ const WhyChooseSection = () => {
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
-                      {item.icon}
+                    <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                      <div className="group-hover:[&>svg]:text-white transition-colors">
+                        {item.icon}
+                      </div>
                     </div>
-                    <span className="text-sm md:text-base font-medium">{item.title}</span>
+                    <div className="transition-all duration-300">
+                      <div className="group-hover:hidden">
+                        <span className="text-sm md:text-base font-medium">{item.title}</span>
+                        <p className="text-xs text-gray-600 mt-1">{item.content}</p>
+                      </div>
+                      <div className="hidden group-hover:block">
+                        <span className="text-sm md:text-base font-medium text-white">{item.title}</span>
+                        <p className="text-xs text-blue-100 mt-1">{item.hoverContent}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
                 {expandedItem === index && (
                   <div className="px-4 pb-4 animate-fade-in">
-                    <div className="bg-blue-50 rounded-lg p-3 ml-11">
-                      <p className="text-sm text-gray-700">{item.content}</p>
+                    <div className="bg-blue-50 group-hover:bg-blue-500 rounded-lg p-3 ml-11 transition-colors">
+                      <p className="text-sm text-gray-700 group-hover:text-blue-100">{item.content}</p>
                     </div>
                   </div>
                 )}

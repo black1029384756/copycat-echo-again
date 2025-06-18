@@ -14,6 +14,9 @@ const ProgramStructure = () => {
       subtitle: "Seminar / Webinar / Mentorship",
       duration: "Frequently",
       features: ["Both Online + Offline"],
+      hoverSubtitle: "Stay Connected with Industry Trends",
+      hoverDuration: "Weekly Sessions",
+      hoverFeatures: ["Live Q&A", "Expert Networking"],
       icon: <BookOpen className="h-5 w-5 text-blue-600" />,
       expandedContent: {
         description: "Join our regular seminars and webinars to stay updated with the latest industry trends and connect with experts.",
@@ -25,6 +28,9 @@ const ProgramStructure = () => {
       subtitle: "Certificate Program",
       duration: "1 to 3 days",
       features: ["Online 100% training"],
+      hoverSubtitle: "Foundation Skills Development",
+      hoverDuration: "Self-Paced Learning",
+      hoverFeatures: ["24/7 Support", "Lifetime Access"],
       icon: <Award className="h-5 w-5 text-blue-600" />,
       expandedContent: {
         description: "Get certified with our comprehensive basic programs designed for beginners and professionals looking to upskill.",
@@ -36,6 +42,9 @@ const ProgramStructure = () => {
       subtitle: "Corporate Training Program",
       duration: "3 to 10 days",
       features: ["Online + Offline 100% LIVE training"],
+      hoverSubtitle: "Team Excellence Programs",
+      hoverDuration: "Intensive Bootcamp",
+      hoverFeatures: ["Custom Curriculum", "Team Assessment"],
       icon: <Users className="h-5 w-5 text-blue-600" />,
       expandedContent: {
         description: "Intensive corporate training programs designed to enhance team skills and organizational capabilities.",
@@ -47,6 +56,9 @@ const ProgramStructure = () => {
       subtitle: "Instrumentation Hands-on",
       duration: "3 to 10 days",
       features: ["Offline 100% LIVE training"],
+      hoverSubtitle: "Professional Lab Experience",
+      hoverDuration: "Intensive Practical",
+      hoverFeatures: ["Real Equipment", "Expert Mentorship"],
       icon: <TestTube className="h-5 w-5 text-blue-600" />,
       expandedContent: {
         description: "Advanced hands-on training with real instruments and equipment for practical learning experience.",
@@ -74,16 +86,18 @@ const ProgramStructure = () => {
         <h2 className="text-2xl font-bold text-center mb-6">Program Structure</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {programStructure.map((program, index) => (
-            <Card key={index} className="p-4 bg-white border border-gray-200 rounded-lg relative transition-all duration-200 hover:shadow-md">
+            <Card key={index} className="p-4 bg-white border border-gray-200 rounded-lg relative transition-all duration-300 hover:shadow-md hover:bg-blue-600 group cursor-pointer">
               <ArrowWithTail />
               <CardContent className="p-0">
                 <div className="flex items-center mb-3">
-                  <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                    {program.icon}
+                  <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3 group-hover:bg-blue-500 transition-colors">
+                    <div className="group-hover:[&>svg]:text-white transition-colors">
+                      {program.icon}
+                    </div>
                   </div>
                   <Badge 
                     variant="secondary" 
-                    className={`rounded-full px-3 py-1 text-xs ${
+                    className={`rounded-full px-3 py-1 text-xs group-hover:bg-blue-500 group-hover:text-white transition-colors ${
                       index === 0 ? 'bg-gray-100 text-gray-700' :
                       index === 1 ? 'bg-blue-100 text-blue-700' :
                       index === 2 ? 'bg-gray-100 text-gray-700' :
@@ -94,26 +108,44 @@ const ProgramStructure = () => {
                   </Badge>
                 </div>
                 
-                <h3 className="font-semibold text-sm mb-2">{program.subtitle}</h3>
-                
-                <div className="flex items-center gap-2 mb-3 text-xs text-gray-600">
-                  <Calendar className="h-3 w-3" />
-                  <span>{program.duration}</span>
-                </div>
-                
-                <div className="flex items-center gap-2 mb-3 text-xs text-gray-600">
-                  <Monitor className="h-3 w-3" />
-                  <span>{program.features[0]}</span>
+                <div className="transition-all duration-300">
+                  <div className="group-hover:hidden">
+                    <h3 className="font-semibold text-sm mb-2">{program.subtitle}</h3>
+                    
+                    <div className="flex items-center gap-2 mb-3 text-xs text-gray-600">
+                      <Calendar className="h-3 w-3" />
+                      <span>{program.duration}</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 mb-3 text-xs text-gray-600">
+                      <Monitor className="h-3 w-3" />
+                      <span>{program.features[0]}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="hidden group-hover:block">
+                    <h3 className="font-semibold text-sm mb-2 text-white">{program.hoverSubtitle}</h3>
+                    
+                    <div className="flex items-center gap-2 mb-3 text-xs text-blue-100">
+                      <Calendar className="h-3 w-3" />
+                      <span>{program.hoverDuration}</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 mb-3 text-xs text-blue-100">
+                      <Monitor className="h-3 w-3" />
+                      <span>{program.hoverFeatures[0]}</span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Expanded Content */}
                 {expandedCard === index && (
-                  <div className="mb-3 p-3 bg-blue-50 rounded-lg animate-fade-in">
-                    <p className="text-xs text-gray-700 mb-2">{program.expandedContent.description}</p>
+                  <div className="mb-3 p-3 bg-blue-50 group-hover:bg-blue-500 rounded-lg animate-fade-in transition-colors">
+                    <p className="text-xs text-gray-700 group-hover:text-blue-100 mb-2">{program.expandedContent.description}</p>
                     <div className="space-y-1">
                       {program.expandedContent.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-center text-xs text-gray-600">
-                          <div className="w-1 h-1 bg-blue-500 rounded-full mr-2"></div>
+                        <div key={idx} className="flex items-center text-xs text-gray-600 group-hover:text-blue-100">
+                          <div className="w-1 h-1 bg-blue-500 group-hover:bg-blue-200 rounded-full mr-2"></div>
                           {highlight}
                         </div>
                       ))}
@@ -125,7 +157,7 @@ const ProgramStructure = () => {
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="flex-1 text-xs py-2 h-8"
+                    className="flex-1 text-xs py-2 h-8 group-hover:bg-transparent group-hover:border-white group-hover:text-white transition-colors"
                     onClick={() => toggleExpanded(index)}
                   >
                     <span className="mr-1">More info</span>
@@ -138,7 +170,7 @@ const ProgramStructure = () => {
                   {expandedCard === index && (
                     <Button 
                       size="sm" 
-                      className="text-xs py-2 h-8 bg-blue-500 hover:bg-blue-600"
+                      className="text-xs py-2 h-8 bg-blue-500 hover:bg-blue-600 group-hover:bg-white group-hover:text-blue-600 transition-colors"
                     >
                       START LEARNING
                     </Button>
