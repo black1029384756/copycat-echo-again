@@ -11,6 +11,14 @@ import Signup from "./pages/Signup";
 import PartnerRole from "./pages/PartnerRole";
 import CampusAmbassadorSignup from "./pages/CampusAmbassadorSignup";
 import PartnerInstitutionSignup from "./pages/PartnerInstitutionSignup";
+import SeminarsWebinars from "./pages/SeminarsWebinars";
+import CertificateProgram from "./pages/CertificateProgram";
+import CorporateTraining from "./pages/CorporateTraining";
+import InstrumentationHandsOn from "./pages/InstrumentationHandsOn";
+import PsychologyCounselling from "./pages/PsychologyCounselling";
+import CareerCounselling from "./pages/CareerCounselling";
+import InstitutionalPlanPricing from "./pages/InstitutionalPlanPricing";
+import CampusAmbassador from "./pages/CampusAmbassador";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +37,14 @@ const App = () => (
           <Route path="/partner-role" element={<PartnerRole />} />
           <Route path="/campus-ambassador-signup" element={<CampusAmbassadorSignup />} />
           <Route path="/partner-institution-signup" element={<PartnerInstitutionSignup />} />
+          <Route path="/seminars-webinars" element={<SeminarsWebinars />} />
+          <Route path="/certificate-program" element={<CertificateProgram />} />
+          <Route path="/corporate-training" element={<CorporateTraining />} />
+          <Route path="/instrumentation-hands-on" element={<InstrumentationHandsOn />} />
+          <Route path="/psychology-counselling" element={<PsychologyCounselling />} />
+          <Route path="/career-counselling" element={<CareerCounselling />} />
+          <Route path="/institutional-plan-pricing" element={<InstitutionalPlanPricing />} />
+          <Route path="/campus-ambassador" element={<CampusAmbassador />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
