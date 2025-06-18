@@ -2,6 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -19,21 +25,65 @@ const Header = () => {
         </Link>
         
         <nav className="hidden lg:flex items-center space-x-6">
-          <div className="relative group">
-            <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
-              Courses/Trainings <ChevronDown className="h-4 w-4 ml-1" />
-            </button>
-          </div>
-          <div className="relative group">
-            <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
-              Services <ChevronDown className="h-4 w-4 ml-1" />
-            </button>
-          </div>
-          <div className="relative group">
-            <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
-              Resources <ChevronDown className="h-4 w-4 ml-1" />
-            </button>
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
+                Courses/Trainings <ChevronDown className="h-4 w-4 ml-1" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-white border shadow-lg">
+              <DropdownMenuItem asChild>
+                <Link to="/seminars-webinars" className="w-full">Seminar/Webinar</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/certificate-program" className="w-full">Certificate Program</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/corporate-training" className="w-full">Corporate Training</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/instrumentation-hands-on" className="w-full">Instrumentation Hands-on</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
+                Services <ChevronDown className="h-4 w-4 ml-1" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-white border shadow-lg">
+              <DropdownMenuItem asChild>
+                <Link to="/psychology-counselling" className="w-full">Psychology Counselling</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/career-counselling" className="w-full">Career Counselling</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/institutional-plan-pricing" className="w-full">Institutional Plan & Pricing</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="text-gray-700 hover:text-blue-600 flex items-center text-sm font-medium">
+                Resources <ChevronDown className="h-4 w-4 ml-1" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-white border shadow-lg">
+              <DropdownMenuItem asChild>
+                <Link to="/scientific-communication" className="w-full">Scientific Communication</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/join-community" className="w-full">Join the Community</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/campus-ambassador" className="w-full">Campus Ambassador</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
         
         <div className="flex items-center space-x-3">
